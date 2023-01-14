@@ -27,6 +27,12 @@ namespace UserRegistrationday20
             string pattern = "^[a-z]{3}.[a-z]{2,}@[a-z]{2}.[a-z]{2}.[a-z]{2}$";
             return TestPattern(pattern, input);
         }
+        //Created phone number method
+        public string phoneNumber(string input)         
+        {
+            string pattern = "^[0-9]{2}[ ][0-9]{10}$";
+            return TestPattern(pattern, input);
+        }
         //Created Test pattern method
         public string TestPattern(string pattern, string input)         
         {
