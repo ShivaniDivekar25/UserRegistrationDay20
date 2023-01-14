@@ -15,6 +15,12 @@ namespace UserRegistrationday20
             string pattern = "^[A-Z]{1}[a-z]{2,}$";
             return TestPattern(pattern, input);
         }
+        //Created last name method
+        public string lastName(string input)         
+        {
+            string pattern = "^[A-Z]{1}[a-z]{2,}$";
+            return TestPattern(pattern, input);
+        }
         //Created Test pattern method
         public string TestPattern(string pattern, string input)         
         {

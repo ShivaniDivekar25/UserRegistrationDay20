@@ -8,6 +8,7 @@ namespace UserRegistrationDay20MSTest
     public class RegularExpressionTest
     {
         [TestMethod]
+        [TestCategory("First Name")]
         [DataRow("Shivani","valid")]
         [DataRow("shivani","invalid")]
         public void Should_Return_First_Name_Valid_Or_Invalid(string input, string expected)
@@ -17,6 +18,20 @@ namespace UserRegistrationDay20MSTest
             RegularExpression regularExpression = new RegularExpression();
             //Act
             string actual = regularExpression.fisrtName(input);
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        [TestCategory("Last Name")]
+        [DataRow("Divekar","valid")]
+        [DataRow("divekar","invalid")]
+        public void Should_Return_Last_Name_Valid_Or_Invalid(string input, string expected)
+        {
+            //AAA methodology
+            //Arrange
+            RegularExpression regularExpression = new RegularExpression();
+            //Act
+            string actual = regularExpression.lastName(input);
             //Assert
             Assert.AreEqual(expected, actual);
         }
