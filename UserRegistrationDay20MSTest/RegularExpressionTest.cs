@@ -65,8 +65,8 @@ namespace UserRegistrationDay20MSTest
         }
         [TestMethod]
         [TestCategory("Valid Password")]
-        [DataRow("dholimhj", "valid")]
-        [DataRow("madart", "invalid")]
+        [DataRow("Dholimhjd", "valid")]
+        [DataRow("Madartk", "invalid")]
         public void Should_Return_Password_Valid_Or_Invalid(string input, string expected)
         {
             //AAA methodology

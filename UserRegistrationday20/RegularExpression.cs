@@ -33,9 +33,10 @@ namespace UserRegistrationday20
             string pattern = "^[0-9]{2}[ ][0-9]{10}$";
             return TestPattern(pattern, input);
         }
-        public string password(string input)          //Created phone number method
+        //Created password method
+        public string password(string input)         
         {
-            string pattern = "^[a-zA-Z]{8,}$";
+            string pattern = "^[A-Z]{1}[a-z]{8,}$";
             return TestPattern(pattern, input);
         }
         //Created Test pattern method
