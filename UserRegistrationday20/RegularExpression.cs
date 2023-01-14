@@ -21,6 +21,12 @@ namespace UserRegistrationday20
             string pattern = "^[A-Z]{1}[a-z]{2,}$";
             return TestPattern(pattern, input);
         }
+        //Created email method
+        public string validEmail(string input)          
+        {
+            string pattern = "^[a-z]{3}.[a-z]{2,}@[a-z]{2}.[a-z]{2}.[a-z]{2}$";
+            return TestPattern(pattern, input);
+        }
         //Created Test pattern method
         public string TestPattern(string pattern, string input)         
         {
