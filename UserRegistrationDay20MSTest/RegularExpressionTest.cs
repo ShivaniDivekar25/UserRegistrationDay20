@@ -63,5 +63,19 @@ namespace UserRegistrationDay20MSTest
             //Assert
             Assert.AreEqual(expected, actual);
         }
+        [TestMethod]
+        [TestCategory("Valid Password")]
+        [DataRow("dholimhj", "valid")]
+        [DataRow("madart", "invalid")]
+        public void Should_Return_Password_Valid_Or_Invalid(string input, string expected)
+        {
+            //AAA methodology
+            //Arrange
+            RegularExpression regularExpression = new RegularExpression();
+            //Act
+            string actual = regularExpression.password(input);
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
