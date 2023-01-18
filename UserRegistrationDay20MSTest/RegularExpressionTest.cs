@@ -9,17 +9,17 @@ namespace UserRegistrationDay20MSTest
     {
         [TestMethod]
         [TestCategory("First Name")]
-        [DataRow(new string[] {"Shivani","Swati"},"valid")]
-        [DataRow(new string[] {"shivani","swati"},"invalid")]
+        [DataRow(new string[] { "Shivani", "Swati" }, "valid")]
+        [DataRow(new string[] { "shivani", "swati" }, "invalid")]
         public void Should_Return_First_Name_Valid_Or_Invalid(string[] inputs, string expected)
         {
             //AAA methodology
             //Arrange
             foreach (string input in inputs)
             {
-                RegularExpression regularExpression = new RegularExpression();
+                RegularExpression regularExpression = new RegularExpression(input);
                 //Act
-                string actual = regularExpression.firstName(input);
+                string actual = regularExpression.firstName();
                 //Assert
                 Assert.AreEqual(expected, actual);
             }
@@ -34,9 +34,9 @@ namespace UserRegistrationDay20MSTest
             //Arrange
             foreach (string input in inputs)
             {
-                RegularExpression regularExpression = new RegularExpression();
+                RegularExpression regularExpression = new RegularExpression(input);
                 //Act
-                string actual = regularExpression.lastName(input);
+                string actual = regularExpression.lastName();
                 //Assert
                 Assert.AreEqual(expected, actual);
             }
@@ -51,9 +51,9 @@ namespace UserRegistrationDay20MSTest
             //Arrange
             foreach (string input in inputs)
             {
-                RegularExpression regularExpression = new RegularExpression();
+                RegularExpression regularExpression = new RegularExpression(input);
                 //Act
-                string actual = regularExpression.validEmail(input);
+                string actual = regularExpression.validEmail();
                 //Assert
                 Assert.AreEqual(expected, actual);
             }
@@ -68,9 +68,9 @@ namespace UserRegistrationDay20MSTest
             //Arrange
             foreach (string input in inputs)
             {
-                RegularExpression regularExpression = new RegularExpression();
+                RegularExpression regularExpression = new RegularExpression(input);
                 //Act
-                string actual = regularExpression.phoneNumber(input);
+                string actual = regularExpression.phoneNumber();
                 //Assert
                 Assert.AreEqual(expected, actual);
             }
@@ -78,16 +78,16 @@ namespace UserRegistrationDay20MSTest
         [TestMethod]
         [TestCategory("Password")]
         [DataRow(new string[] { "Kjhfld@68", "Ahdyfh@90" }, "valid")]
-        [DataRow(new string[] { "kjhfgdh1", "adfhgsw4" }, "Invalid")]
+        [DataRow(new string[] { "kjhfgdh1", "adfhgsw4" }, "invalid")]
         public void Should_Return_Password_Valid_Or_Invalid(string[] inputs, string expected)
         {
             //AAA methodology
             //Arrange
             foreach (string input in inputs)
             {
-                RegularExpression regularExpression = new RegularExpression();
+                RegularExpression regularExpression = new RegularExpression(input);
                 //Act
-                string actual = regularExpression.password(input);
+                string actual = regularExpression.password();
                 //Assert
                 Assert.AreEqual(expected, actual);
             }
@@ -95,7 +95,7 @@ namespace UserRegistrationDay20MSTest
         [TestMethod]
         [TestCategory("Validate Emails")]
         [DataRow(new string[] { "abc.xyz@bridgelabz.co.in", "abc@yahoo.com", "abc-100@yahoo.com", "abc.100@yahoo.com", "abc111@abc.com", "abc_100@abc.net", "abc.100@abc.com.au", "abc@1.com", "abc@gmail.com.com", "abc+100@gmail.com" }, "valid")]
-        [DataRow(new string[] { "abf@%*.com", "abc", "abc@.com.my", "abc123@gmail.a", "abc123@.com", "abc123@.com.com", ".abc@abc.com", "abc()*@gmail.com", "abc@%*.com", "abc..2002@gmail.com", "abc@abc@gmail.com", "abc@gmail.com.1a", "abc@gmail.com.aa.au" }, "Invalid")]
+        [DataRow(new string[] { "abf@%*.com", "abc", "abc@.com.my", "abc123@gmail.a", "abc123@.com", "abc123@.com.com", ".abc@abc.com", "abc()*@gmail.com", "abc@%*.com", "abc..2002@gmail.com", "abc@abc@gmail.com", "abc@gmail.com.1a", "abc@gmail.com.aa.au" }, "invalid")]
         public void Should_Return_Emails_Is_Valid_Or_Not(string[] inputs, string expected)
         {
             //AAA Methodology
@@ -104,7 +104,7 @@ namespace UserRegistrationDay20MSTest
             {
                 RegularExpression regularExpression = new RegularExpression(input);
                 //Act
-                string actual = regularExpression.validateEmails(input);
+                string actual = regularExpression.validateEmails();
 
                 //Assert
                 Assert.AreEqual(expected, actual);
@@ -117,18 +117,18 @@ namespace UserRegistrationDay20MSTest
         {
             try
             {
-                //arrange
-
+                //Arrange
                 foreach (string input in inputs)
                 {
+                    
                     RegularExpression regularExpression = new RegularExpression(input);
                     //Act
-                    //string actual = regularExpression.firstName(input);
-                    //string actual = regularExpression.lastName(input);
-                    //string actual = regularExpression.validEmail(input);
-                    //string actual = regularExpression.phoneNumber(input);
-                    //string actual = regularExpression.password(input);
-                    string actual = regularExpression.validateEmails(input);
+                    //string actual = regularExpression.firstName();
+                    //string actual = regularExpression.lastName();
+                    //string actual = regularExpression.validEmail();
+                    //string actual = regularExpression.phoneNumber();
+                    //string actual = regularExpression.password();
+                    string actual = regularExpression.validateEmails();
                     if (actual != null)
                         Assert.AreEqual(expected, actual);
                 }
