@@ -30,32 +30,74 @@ namespace UserRegistrationday20
         //Created first name method
         public bool firstName()
         {
-            return (Regex.IsMatch(inputs, patternFirstName));
+            if(Regex.IsMatch(inputs, patternFirstName))
+            {
+                return true;
+            }
+            else
+            {
+                throw new ExceptionHandling("Invalid First Name", ExceptionHandling.ExceptionTypes.INVALID_FIRST_NAME);
+            }
         }
         //Created last name method
         public bool lastName()
         {
-            return (Regex.IsMatch(inputs, patternLastName));
+            if(Regex.IsMatch(inputs, patternLastName))
+            {
+                return true;
+            }
+            else
+            {
+                throw new ExceptionHandling("Invalid Last Name", ExceptionHandling.ExceptionTypes.INVALID_LAST_NAME);
+            }
         }
         //Created email method
         public bool validEmail()
         {
-            return (Regex.IsMatch(inputs,patternValidEmail));
+            if (Regex.IsMatch(inputs, patternValidEmail))
+            {
+                return true;
+            }
+            else
+            {
+                throw new ExceptionHandling("Invalid Email", ExceptionHandling.ExceptionTypes.INVALID_EMAIL);
+            }
         }
         //Created phone number method
         public bool phoneNumber()
         {
-            return (Regex.IsMatch(inputs, patternPhoneNumber));
+            if (Regex.IsMatch(inputs, patternPhoneNumber))
+            {
+                return true;
+            }
+            else
+            {
+                throw new ExceptionHandling("Invalid Phone Number", ExceptionHandling.ExceptionTypes.INVALID_PHONENUMBER);
+            }
         }
         //Created password method
         public bool password()
         {
-            return (Regex.IsMatch(inputs, patternPassword));
+            if (Regex.IsMatch(inputs, patternPassword))
+            {
+                return true;
+            }
+            else
+            {
+                throw new ExceptionHandling("Invalid Password", ExceptionHandling.ExceptionTypes.INVALID_PASSWORD);
+            }
         }
         //Created validate Emails method
         public bool validateEmails()
         {
-            return (Regex.IsMatch(inputs, patternValidateEmails));
+            if (Regex.IsMatch(inputs, patternValidateEmails))
+            {
+                return true;
+            }
+            else
+            {
+                throw new ExceptionHandling("Invalid all emails", ExceptionHandling.ExceptionTypes.INVALID_ALL_EMAILS);
+            }
         }
        
     }
