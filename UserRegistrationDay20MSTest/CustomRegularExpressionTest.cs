@@ -21,7 +21,7 @@ namespace UserRegistrationDay20MSTest
                 {
                     RegularExpression regularExpression = new RegularExpression(input);
                     //Act
-                    bool actual = regularExpression.firstName();
+                    bool actual = regularExpression.firstName(input);
                     //Assert
                     Assert.IsTrue(actual);
                 }
@@ -45,7 +45,7 @@ namespace UserRegistrationDay20MSTest
                 {
                     RegularExpression regularExpression = new RegularExpression(input);
                     //Act
-                    bool actual = regularExpression.lastName();
+                    bool actual = regularExpression.lastName(input);
                     //Assert
                     Assert.IsTrue(actual);
                 }
@@ -69,7 +69,7 @@ namespace UserRegistrationDay20MSTest
                 {
                     RegularExpression regularExpression = new RegularExpression(input);
                     //Act
-                    bool actual = regularExpression.validEmail();
+                    bool actual = regularExpression.validEmail(input);
                     //Assert
                     Assert.IsTrue(actual);
                 }
@@ -93,7 +93,7 @@ namespace UserRegistrationDay20MSTest
                 {
                     RegularExpression regularExpression = new RegularExpression(input);
                     //Act
-                    bool actual = regularExpression.phoneNumber();
+                    bool actual = regularExpression.phoneNumber(input);
                     //Assert
                     Assert.IsTrue(actual);
                 }
@@ -117,7 +117,7 @@ namespace UserRegistrationDay20MSTest
                 {
                     RegularExpression regularExpression = new RegularExpression(input);
                     //Act
-                    bool actual = regularExpression.password();
+                    bool actual = regularExpression.password(input);
                     //Assert
                     Assert.IsTrue(actual);
                 }
@@ -141,7 +141,7 @@ namespace UserRegistrationDay20MSTest
                 {
                     RegularExpression regularExpression = new RegularExpression(input);
                     //Act
-                    bool actual = regularExpression.validateEmails();
+                    bool actual = regularExpression.validateEmails(input);
 
                     //Assert
                     Assert.IsTrue(actual);

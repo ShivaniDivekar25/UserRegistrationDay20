@@ -11,7 +11,7 @@ namespace UserRegistrationday20
     {
         //Created Variable declaration
         public string inputs;
-        public string patternFirstName= "^[A-Z]{1}[a-z]{2,}$";
+        public string patternFirstName = "^[A-Z]{1}[a-z]{2,}$";
         public string patternLastName = "^[A-Z]{1}[a-z]{2,}$";
         public string patternValidEmail = "^[a-z]{3}.[a-z]{2,}@[a-z]{2}.[a-z]{2}.[a-z]{2}$";
         public string patternPhoneNumber = "^[0-9]{2}[ ][0-9]{10}$";
@@ -28,77 +28,16 @@ namespace UserRegistrationday20
             this.inputs = inputs;
         }
         //Created first name method
-        public bool firstName()
-        {
-            if(Regex.IsMatch(inputs, patternFirstName))
-            {
-                return true;
-            }
-            else
-            {
-                throw new ExceptionHandling("Invalid First Name", ExceptionHandling.ExceptionTypes.INVALID_FIRST_NAME);
-            }
-        }
+        public bool firstName(string Firstname) => (Regex.IsMatch(inputs, patternFirstName)) ? true : throw new ExceptionHandling("Invalid First Name", ExceptionHandling.ExceptionTypes.INVALID_FIRST_NAME);
         //Created last name method
-        public bool lastName()
-        {
-            if(Regex.IsMatch(inputs, patternLastName))
-            {
-                return true;
-            }
-            else
-            {
-                throw new ExceptionHandling("Invalid Last Name", ExceptionHandling.ExceptionTypes.INVALID_LAST_NAME);
-            }
-        }
+        public bool lastName(string LastName) => (Regex.IsMatch(inputs, patternLastName)) ? true : throw new ExceptionHandling("Invalid Last Name", ExceptionHandling.ExceptionTypes.INVALID_LAST_NAME);
         //Created email method
-        public bool validEmail()
-        {
-            if (Regex.IsMatch(inputs, patternValidEmail))
-            {
-                return true;
-            }
-            else
-            {
-                throw new ExceptionHandling("Invalid Email", ExceptionHandling.ExceptionTypes.INVALID_EMAIL);
-            }
-        }
-        //Created phone number method
-        public bool phoneNumber()
-        {
-            if (Regex.IsMatch(inputs, patternPhoneNumber))
-            {
-                return true;
-            }
-            else
-            {
-                throw new ExceptionHandling("Invalid Phone Number", ExceptionHandling.ExceptionTypes.INVALID_PHONENUMBER);
-            }
-        }
+        public bool validEmail(string ValidEmail) => (Regex.IsMatch(inputs, patternValidEmail)) ? true : throw new ExceptionHandling("Invalid Email", ExceptionHandling.ExceptionTypes.INVALID_EMAIL);
+        //Created phomne number method
+        public bool phoneNumber(string PhoneNumber) => (Regex.IsMatch(inputs, patternPhoneNumber)) ? true : throw new ExceptionHandling("Invalid Phone Number", ExceptionHandling.ExceptionTypes.INVALID_PHONENUMBER);
         //Created password method
-        public bool password()
-        {
-            if (Regex.IsMatch(inputs, patternPassword))
-            {
-                return true;
-            }
-            else
-            {
-                throw new ExceptionHandling("Invalid Password", ExceptionHandling.ExceptionTypes.INVALID_PASSWORD);
-            }
-        }
+        public bool password(string Password) => (Regex.IsMatch(inputs, patternPassword)) ? true : throw new ExceptionHandling("Invalid Password", ExceptionHandling.ExceptionTypes.INVALID_PASSWORD);
         //Created validate Emails method
-        public bool validateEmails()
-        {
-            if (Regex.IsMatch(inputs, patternValidateEmails))
-            {
-                return true;
-            }
-            else
-            {
-                throw new ExceptionHandling("Invalid all emails", ExceptionHandling.ExceptionTypes.INVALID_ALL_EMAILS);
-            }
-        }
-       
+        public bool validateEmails(string ValidateEmails) => (Regex.IsMatch(inputs, patternValidateEmails)) ? true : throw new ExceptionHandling("Invalid all emails", ExceptionHandling.ExceptionTypes.INVALID_ALL_EMAILS);
     }
 }
